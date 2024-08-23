@@ -7,15 +7,15 @@ document.getElementById('energyForm').addEventListener('submit', function(event)
 
     // Cálculo simple de tarifa (modificar según tarifas reales)
     if (consumption <= 100) {
-        estimatedRate = consumption * 0.5; // Ejemplo: S/.0.5 por kWh
+        estimatedRate = consumption * 0.64; // Ejemplo: S/.0.88 por kWh
         tips.push("Apaga las luces cuando no las necesites.");
         tips.push("Usa bombillas de bajo consumo.");
     } else if (consumption <= 300) {
-        estimatedRate = consumption * 0.4;
+        estimatedRate = consumption * 0.64;
         tips.push("Considera utilizar electrodomésticos de bajo consumo.");
         tips.push("Optimiza el uso de aire acondicionado.");
     } else {
-        estimatedRate = consumption * 0.3;
+        estimatedRate = consumption * 0.64;
         tips.push("Revisa el aislamiento de tu hogar.");
         tips.push("Instala paneles solares si es posible.");
     }

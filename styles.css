@@ -1,28 +1,262 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Edu+VIC+WA+NT+Beginner:wght@400..700&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pacifico&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sedan:ital@0;1&display=swap');
+
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: "Montserrat", sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
     background-color: #f0f0f0;
     margin: 0;
     padding: 0;
+}
+
+html {
+    height: 100%;
+}
+
+.pie-pagina {
+    margin-top: auto;
+    width: 100%;
+    background-color: #2d2d2d;
+    width: 100%;
+    align-self: flex-end;
+}
+
+.pie-pagina .grupo-1 {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 50px;
+    padding: 45px 0px;
+}
+
+.pie-pagina .grupo-1 .box figure {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pie-pagina .grupo-1 .box figure img {
+    width: 250px;
+}
+
+.pie-pagina .grupo-1 .box h2 {
+    color: #fff;
+    margin-bottom: 25px;
+    font-size: 20px;
+}
+
+.pie-pagina .grupo-1 .box p {
+    color: #efefef;
+    margin-bottom: 10px;
+}
+
+.pie-pagina .grupo-1 .red-social a {
+    display: inline-block;
+    text-decoration: none;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    color: #fff;
+    margin-right: 10px;
+    background-color: #555555; 
+    text-align: center;
+    border-radius: 50px;
+    transition: all 300ms ease;
+}
+
+.pie-pagina .grupo-1 .red-social a:hover {
+    color: #9c9c9c;
+}
+
+.pie-pagina .grupo-2 {
+    background-color: #363636;
+    padding: 15px 10px;
+    text-align: center;
+    color: #fff;
+}
+
+.pie-pagina .grupo-2 small{
+    font-size: 15px;
+}
+
+@media screen and (max-width: 800px) {
+    .pie-pagina .grupo-1 {
+        width: 90%;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 30px;
+        padding: 35px 0px;
+    }
+}
+
+.header {
+    background-color: #2a2a2a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 85px;
+    padding: 5px 10%;
+}
+
+.header .logo{
+    cursor: pointer;
+}
+
+.header .logo img{
+    height: 90px;
+    width: auto;
+    transition: all;
+}
+
+.header .logo img:hover{
+    transform: scale(1.2);
+}
+
+.header .nav-links {
+    list-style: none;
+}
+
+.header .nav-links li{
+    cursor: pointer;
+    color: #f0f0f0;
+    display: inline-block;
+    padding: 0 20px;
+}
+
+.header .nav-links li:hover,
+.overlay a:hover{
+    transform: scale(1.1);
+}
+
+.header .nav-links a{
+    font-size: 700;
+    color: #eceff1;
+}
+
+.header .nav-links a:hover{
+    color: 	#555555;
+}
+
+.menu {
+    display: none;
+}
+
+.header .btn button,
+.header .menu button{
+    font-weight: 700;
+    color: #1b3039;
+    padding: 9px 25px;
+    background: #eceff1;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.header .btn button:hover,
+.header .menu  button:hover{
+    background-color: #e2f1f8;
+    color: 	#555555;
+    transform: scale(1.1);
+}
+
+@media screen and (max-width: 800px) {
+    .nav-links, .btn{
+        display: none;
+    }
+    .menu {
+        display: inherit;
+    }
+}
+
+.header a{
+    text-decoration: none;
+}
+
+.header .overlay{
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    background-color: rgb(33, 49, 63, 95);
+    overflow: hidden;
+    transition: all 0.3s ease 0s;
+}
+
+.header .overlay .overlay-content{
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.header .overlay a{
+    padding: 15px;
+    font-size: 36px;
+    display: block;
+    transition: all 0.3s ease 0s;
+    font-weight: 700;
+    color: #eceff1;
+}
+
+.header .overlay a:hover,
+.header .overlay a:focus{
+    color: 	#555555;
+}
+
+.header .overlay .close{
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 65px;
+}
+
+@media screen and (max-height:450px){
+    .header .overlay a{
+        font-size: 20px;
+    }
+
+    .header .overlay .close{
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
 }
 
 .container {
     width: 90%;
     max-width: 900px;
     margin: 0 auto;
+    display: grid;
+    grid-template-rows: auto auto auto;
 }
 
-header {
+.hi {
+    font-family: "Pacifico", cursive;
     background-color: #2d2d2d;
+    background-size: cover;
+    background-position: center;
     color: #f0f0f0;
+    font-size: 20px;
     padding: 20px;
     border-bottom: 2px solid #bdc3c7;
     text-align: center; /* Centra el contenido del header */
 }
 
-header h1 {
+.hi h1 {
     margin: 0;
     font-size: 1.8em;
     font-weight: 700;
+    display: inline-block;
+    padding: 10px;
+    border-radius: 5px;
 }
 
 main {
@@ -33,6 +267,7 @@ main {
 }
 
 h2 {
+    font-family: "Chakra Petch", sans-serif;
     margin-top: 0;
     font-size: 1.6em;
     color: #2d2d2d;
@@ -47,6 +282,7 @@ form {
 }
 
 label {
+    text-align: center;
     margin-bottom: 10px;
     font-weight: 700;
     color: #2d2d2d;
@@ -61,11 +297,12 @@ input[type="number"] {
 }
 
 button {
+    font-family: "Montserrat", cursive;
     background-color: #000;
     border: 1px solid #fff;
     color: #fff;
     padding: 12px;
-    font-size: 1em;
+    font-size: 0.9em;
     cursor: pointer;
     border-radius: 5px;
     transition: background-color 0.3s, border-color 0.3s;
@@ -97,4 +334,54 @@ button i {
 
 .hidden {
     display: none;
+}
+
+@media (max-width: 800px) {
+    .hi h1 {
+        font-size: 1.5em;
+        padding: 8px;
+    }
+
+    main {
+        padding: 20px;
+    }
+
+    form {
+        max-width: 100%;
+    }
+
+    input[type="number"] {
+        padding: 10px;
+        font-size: 0.9em;
+    }
+
+    button {
+        padding: 10px;
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    .hi h1 {
+        font-size: 1.2em;
+        padding: 6px;
+    }
+
+    main {
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 1.4em;
+    }
+
+    input[type="number"] {
+        padding: 8px;
+        font-size: 0.8em;
+    }
+
+    button {
+        padding: 8px;
+        font-size: 0.8em;
+    }
 }
